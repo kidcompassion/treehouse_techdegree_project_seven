@@ -1,26 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
+
+import {
+  BrowserRouter,
+  Route
+} from 'react-router-dom';
 import './App.css';
+
+//import PhotoResults from './components/PhotoResults';
+
+//import Home from './components/Home';
 import Navigation from './components/Navigation';
 import SearchForm from './components/SearchForm';
 import PhotoResults from './components/PhotoResults';
-//import Photo from './components/Photo';
+class App extends Component {
 
-// App state should be able to tell whether the user is searching or filtering to show/hide components
-//Show total results
+  render(){
 
-
-
-function App() {
-  return (
-    <div className="App container">
-      
-      
+    return(
+      <BrowserRouter>
         <SearchForm />
         <Navigation />
-        <PhotoResults />
+        <Route path='/pugs' render={()=><PhotoResults query={'Pugs'}/>} />
+        <Route path='/brussels-griffons' render={()=><PhotoResults query={'Brussel Griffons'}/>} />
+        <Route path='/dog-baths' render={()=><PhotoResults query={'Dog Baths'}/>} />
+        
+      </BrowserRouter>
       
-    </div>
-  );
-}
+    );
+
+
+    };
+  }
 
 export default App;
