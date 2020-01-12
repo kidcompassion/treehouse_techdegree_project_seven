@@ -2,11 +2,14 @@ import React from 'react';
 
 const NotFound = () =>{
     return(
-        <li class="not-found">
-            <h3>No Results Found</h3>
-            <p>You search did not return any results. Please try again.</p>
-          </li>
-
+        <div className="photo-container">
+            <ul>
+            <li className="not-found">
+                <h3>404</h3>
+                <p>Sorry, this page was not found.</p>
+            </li>
+            </ul>
+        </div>
     );
 }
 

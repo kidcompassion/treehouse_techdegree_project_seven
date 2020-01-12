@@ -1,104 +1,46 @@
-import React, { Component} from 'react';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom'
-
+import React from 'react';
 import Photo from './Photo';
+import NoResults from './NoResults';
 
+const PhotoResults = (props) =>{
 
-class PhotoResults extends Component{
+  // Get the images list from the props
+  const imageData = props.imageList;
   
-  constructor(){
-    super();
+  // Set up variable for the rendered components
+  let photos;
 
-    this.state = {
-      data: [], 
-      loading: false
-    }
-  }
-
-
-
-  componentDidMount(){
-    console.log(this.props);
-    this.handleSearch(this.props.query);
-  }
-
-
-  photoResults =()=>{
-
-    let photos = this.state.data.map((photo) => {
-       return <Photo 
-                id={photo.id}
-                key={photo.id}
-                title={photo.title}
-                secret={photo.secret}
-                server={photo.server}
-                
-
-                />
-    }); 
-    return photos;
-  }
-
-
-  handleSearch = (query) =>{
-    
-
-      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=77fd04f9f92ce8e38c484eee7a5735a0&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
-      .then(response => {
-        console.log(response.data.photos.photo);
-        this.setState({
-          data: response.data.photos.photo,
-          loading: false
-        })
-      })
-      .catch(error => {
-        console.log('Error fetching and parsing data', error);
-      });
-  }
-    
-  
-  
-    
-
-
-  /*  let courses = props.data.map((course) => {
-        return <Course title={course.title}
-                       desc={course.description}
-                       img={course.img_src}
-                       key={course.id} />
+  // If there's image Data, render it into the correct component structure
+  if(imageData.length > 0){
+    photos = imageData.map((photo) => {
+        return <Photo 
+          id={photo.id}
+          key={photo.id}
+          title={photo.title}
+          secret={photo.secret}
+          server={photo.server}
+        />
       }); 
-      return (
-        <div>
-          <ul>
-            {courses}    
-          </ul>
-        </div>
-      );
-    }*/
+  // If there isn't data, show the error
+  } else {
+    photos = <NoResults />
+  }
 
-
-
-
-    
-render() {
-  return(
-        <div className="photo-container">
-            <h2>Results</h2>
+  return (
+    <div className="photo-container">
+        <h2>Results in "{props.titleTag}"</h2>
         <ul>
-          
-                {this.photoResults()}
-                </ul>
-                
-            </div>
-  )
-}
-           
-           
-        
-    
-    
-    
-}
-
-export default withRouter(PhotoResults);
+        { 
+          //Check to see if results are loaded
+          (props.loading)
+          // If results aren't back, show a loader
+          ? <li className="loader"><p>Loading...</p></li>
+          // If they are, load the photos
+          : photos
+        }
+      </ul>
+    </div>
+  );
+}       
+ 
+export default PhotoResults;

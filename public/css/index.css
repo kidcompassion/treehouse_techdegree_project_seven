@@ -1,15 +1,19 @@
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  color: #3f4850;
-  border: solid 10px red!important;
-  
+  font-family: 'Work Sans', sans-serif;
+  color: #804505;
+  background-image: url(../tiled-bg.png);
+  background-color: #D3F3EE;
 }
 
 h2 {
   font-size: 2em;
   margin: 52px 0 40px;
   text-transform: capitalize;
+  background-color: #fff;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 4px;
 }
 
 ul {
@@ -21,6 +25,26 @@ a {
   text-decoration: none;
 }
 
+.photo-container ul .loader {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  animation-name: loaderAnim;
+  background-color: #FF748B;
+  color:#fff;
+  animation-duration: 4s;
+  animation-iteration-count: infinite; 
+  height: auto;
+  margin: 0 auto;
+}
+
+@keyframes loaderAnim{
+  0% {opacity: 1}
+  50% {opacity:0}
+  100% {opacity: 1}
+}
+
+
 .search-form {
   max-width: 460px;
   display: flex;
@@ -29,18 +53,19 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: #41CDE1;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 input {
   font-size: 1em;
   width: 100%;
   background-color: #edeff0;
-  padding: 10px 15px;
+  padding: 16px 15px;
   border: 3px solid #d7dbdf;
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
@@ -54,16 +79,20 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  font-family: 'Work Sans', sans-serif;
+  background: #41CDE1;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
+  transition: all 0.5s;
 }
 
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #FF748B;
+  transition: all 0.5s;
+
 }
 
 .photo-container ul {
@@ -78,7 +107,10 @@ input {
   width: 220px;
   height: 165px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
+  border: solid 4px #fff;
+  background-color: #fff;
+  
 }
 
 .photo-container ul img {
@@ -122,6 +154,10 @@ input {
   
   .main-nav li {
     margin: 10px;
-    width: 100px;
+    width: 160px;
+  }
+
+  .main-nav li a{
+    padding: 12px;
   }
 }
