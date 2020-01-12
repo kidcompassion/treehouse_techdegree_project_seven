@@ -1,3 +1,18 @@
+# Treehouse Tech Degree Project Seven: React Photo Gallery
+
+This project is a React Photo Gallery, using axios to retrieve API data from Flickr. IT has three main nav options (pug, brussel griffon and weiner dog) as well as the ability to search. 
+
+I'm going for an Exceeds Expectations grade, but will accept a meets expectations grade.
+
+This project is constructed with:
+* the Search Form, Navigation and route logic in App.js
+* Navigation listens for a route change, and when there is one, gets the current route for use as the search term for the API request
+* Search listens for the form to be submitted, and when it is, uses the requested term to construct the route and the API request
+* I've added components for 404 errors in the routes, and No Results from a search
+* I've also added a loader to the PhotoResults component
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

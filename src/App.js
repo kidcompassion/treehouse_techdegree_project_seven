@@ -36,12 +36,15 @@ class App extends Component {
    * Gets the value of this.props.sendQuery from search and nav components
    */
   getQueriedTerm = (searchTerm) => {
-    // Updates the state with the latest search term
-    this.setState({query: searchTerm});
-    // Rerun the query with this search term
+    // Update state and run the query with this search term
     this.performSearch(searchTerm);
+    this.setState({query: searchTerm});
   }
 
+  /**
+   * performSearch {string}
+   * Uses the value of the search term to complete an API call via axios
+   */
   performSearch = (searchQuery) =>{
     // rename 'this' to avoid naming collisions
     let currentComponent = this;
@@ -66,13 +69,6 @@ class App extends Component {
           <SearchForm sendQuery = {this.getQueriedTerm} />
           <Switch>
             <Route exact path='/' render={()=> <Redirect to='/pug' /> }/>
-            <Route exact path='/search' render={
-              ({match})=>
-                  <React.Fragment>
-                    <Navigation sendQuery={this.getQueriedTerm} match={match} />
-                    <PhotoResults loading={this.state.loading} titleTag={match.params.topic} imageList={this.state.images}/>
-                  </React.Fragment>
-              } />
             <Route path='/pug' render={
                 ({match})=>
                   <React.Fragment>

@@ -8,12 +8,13 @@ class SearchForm extends Component{
    *  OnSubmit handler that builds search URL and passes info from SearchForm up to App Component
    */
   handleSearchInput = (e) => {
+    
       e.preventDefault();
       // Get ref from input
       let searchTerm = this.searchTerm.value;
-      // Use ref value to build route
+      // Use it to build a path
       this.props.history.push(`/search/${searchTerm}`);
-      // Pass search query back for Api call
+      // Pass search term up to parent
       this.props.sendQuery(searchTerm);
       // Clear search field when I'm done
       e.currentTarget.reset();
