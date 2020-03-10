@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/kidcompassion/treehouse_techdegree_project_seven/static/css/main.e37efecb.chunk.css",
+    "main.js": "/kidcompassion/treehouse_techdegree_project_seven/static/js/main.833345d8.chunk.js",
+    "main.js.map": "/kidcompassion/treehouse_techdegree_project_seven/static/js/main.833345d8.chunk.js.map",
+    "runtime-main.js": "/kidcompassion/treehouse_techdegree_project_seven/static/js/runtime-main.05c47ba4.js",
+    "runtime-main.js.map": "/kidcompassion/treehouse_techdegree_project_seven/static/js/runtime-main.05c47ba4.js.map",
+    "static/js/2.d49b5157.chunk.js": "/kidcompassion/treehouse_techdegree_project_seven/static/js/2.d49b5157.chunk.js",
+    "static/js/2.d49b5157.chunk.js.map": "/kidcompassion/treehouse_techdegree_project_seven/static/js/2.d49b5157.chunk.js.map",
+    "index.html": "/kidcompassion/treehouse_techdegree_project_seven/index.html",
+    "precache-manifest.8f1504c657cef9f6b2a4963608d834a1.js": "/kidcompassion/treehouse_techdegree_project_seven/precache-manifest.8f1504c657cef9f6b2a4963608d834a1.js",
+    "service-worker.js": "/kidcompassion/treehouse_techdegree_project_seven/service-worker.js",
+    "static/css/main.e37efecb.chunk.css.map": "/kidcompassion/treehouse_techdegree_project_seven/static/css/main.e37efecb.chunk.css.map",
+    "static/js/2.d49b5157.chunk.js.LICENSE": "/kidcompassion/treehouse_techdegree_project_seven/static/js/2.d49b5157.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05c47ba4.js",
+    "static/js/2.d49b5157.chunk.js",
+    "static/css/main.e37efecb.chunk.css",
+    "static/js/main.833345d8.chunk.js"
+  ]
+}
